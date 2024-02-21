@@ -1,0 +1,22 @@
+# h5 Koko juttu
+
+
+a) Koko juttu. Asenna uusi, tyhjä virtuaalikone. Tee koneelle tavalliset alkutoimet. Asenna sille Apache-weppipalvelin ja SSH-etähallintapalvelin. Tee uusi etusivu weppipalvelimelle niin, että sivuja voi muokata normaalikäyttäjän oikeuksin. Käytä tässä name based virtual host -tekniikkaa. (Raportoi työskennellessä. Tämän harjoituksen voi hyvin tehdä VirtualBoxissa tai muussa paikallisesssa ympäristössä.)
+b) Pubkey. Automatisoi kirjautuminen julkisella SSH-avaimella.
+c) Digging host. Tutki domain-nimesi nimesi tietoja 'host' ja 'dig' -komennoilla. Analysoi tulokset. Vertaa tuloksia nimen vuokraajan (namecheap.com, name.com...) weppiliittymässä näkyviin asetuksiin. (Jos sinulla ei ole omaa nimeä käytössä, voit tutkia jotain muuta nimeä).
+m) Vapaaehtoinen: Asenna vagrant, asenna sillä uusi virtuaalikone.
+Vinkit
+
+On hyvä idea kokeilla koko jutun asentamista useamman kerran. Itse tehtävässä tämä raportoidaan vain kerran. Voit halutessasi tehtävän tehtyäsi kokeilla tätä useamman kerran raportoimatta. Yleensä eka kerta vie tunteja, toka 1-2 h ja kymmenes kerta 15-20 minuttia. Samalla aivokapasiteettia vapautuu nippeleiden ja nappeleiden vahtaamisesta suurempiin ja haastavampiin kysymyksiin.
+ssh-keygen, ssh-copy-id
+journalctl --since yesterday|grep -i ssh
+sudo apt-get -y install bind9-dnsutils bind9-host # asentaa komennot 'host' ja 'dig'
+Vagrantilla on todella nopea tehdä ja poistaa virtuaalikoneita. Helpottaa harjoittelua. Ulkomuistista:
+Asennus
+Asennus Linux: sudo apt-get update; sudo apt-get -y install virtualbox vagrant
+Asennus Windows: https://developer.hashicorp.com/vagrant/install?product_intent=vagrant "Windows" "Binary download" "AMD64", kaksoisklikkaus ja eteneminen next-next velhon kanssa
+Käyttö
+vagrant init debian/bookworm64
+vagrant up
+vagrant ssh
+ja lopuksi, kun haluat tuhota virtuaalikoneen ja kaikki sen sisältämät tiedostot: 'vagrant destroy'
