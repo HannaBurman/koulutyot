@@ -1,4 +1,4 @@
-# H7 Ohjelmointi
+# H7 Ohjelmoint
 
 ## Käyttöympäristö
 
